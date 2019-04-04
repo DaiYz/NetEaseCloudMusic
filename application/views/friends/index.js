@@ -13,7 +13,7 @@ class FriendsScreen extends React.Component {
   }
 
   getWidthAndHeight = (item, len) => {
-    const defaultContainerWidth = (width - 14 - 14 - 56)
+    const defaultContainerWidth = (width - 14 - 14)
     const defaultImageWidth = defaultContainerWidth / 2
     if (len === 1) {
       if (item.width === item.height) {
@@ -36,13 +36,13 @@ class FriendsScreen extends React.Component {
     } else {
       if (len === 2) {
         return {
-          width: (defaultContainerWidth - 4) / 2,
-          height: (defaultContainerWidth - 4) / 2
+          width: (defaultContainerWidth - 4 - 56) / 2,
+          height: (defaultContainerWidth - 4 - 56) / 2
         }
       } else {
         return {
-          width: (defaultContainerWidth - 8) / 2,
-          height: (defaultContainerWidth - 8) / 2
+          width: (defaultContainerWidth - 8 - 56) / 2,
+          height: (defaultContainerWidth - 8 - 56) / 2
         }
       }
     }

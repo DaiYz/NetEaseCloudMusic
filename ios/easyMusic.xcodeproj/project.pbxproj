@@ -59,11 +59,10 @@
 		D84D02B1224DE43C009D251B /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84D02B0224DE43C009D251B /* OpenGLES.framework */; };
 		D84D02B3224DE44C009D251B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84D02B2224DE44B009D251B /* QuartzCore.framework */; };
 		D84D02B5224DE456009D251B /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84D02B4224DE456009D251B /* VideoToolbox.framework */; };
-		D84D053E22521335009D251B /* libRCTVideo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D84D053B22521314009D251B /* libRCTVideo.a */; };
+		D8A6A4522255C1020066FDF2 /* libRNFS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FDFC762228CCB000013176 /* libRNFS.a */; };
 		D8D2522B223B6DCD00F5173D /* InfoPlist.Strings in Resources */ = {isa = PBXBuildFile; fileRef = D8D2522D223B6DCD00F5173D /* InfoPlist.Strings */; };
 		D8D252B922421B7600F5173D /* libFastImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D2528F22421B6700F5173D /* libFastImage.a */; };
 		D8FDFC6F2228CC9100013176 /* libRNAudio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FDFC6E2228CC8800013176 /* libRNAudio.a */; };
-		D8FDFC792228CCBC00013176 /* libRNFS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FDFC762228CCB000013176 /* libRNFS.a */; };
 		DFECFEA77E74467A9870D2AE /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 344A570A08BD4CAB82E5A08B /* FontAwesome5_Regular.ttf */; };
 		E15678BC8E794B35A445243C /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 809DC7D7ABAD48A397D3DDC6 /* Entypo.ttf */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
@@ -232,20 +231,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 3DBE0D0D1F3B181C0099AA32;
 			remoteInfo = "fishhook-tvOS";
-		};
-		D84D053A22521314009D251B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D84D053522521314009D251B /* RCTVideo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 134814201AA4EA6300B7C361;
-			remoteInfo = RCTVideo;
-		};
-		D84D053C22521314009D251B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D84D053522521314009D251B /* RCTVideo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 641E28441F0EEC8500443AF6;
-			remoteInfo = "RCTVideo-tvOS";
 		};
 		D8D2519E223B43B700F5173D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -451,7 +436,6 @@
 		D84D02B0224DE43C009D251B /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		D84D02B2224DE44B009D251B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D84D02B4224DE456009D251B /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
-		D84D053522521314009D251B /* RCTVideo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTVideo.xcodeproj; path = "../node_modules/react-native-video/ios/RCTVideo.xcodeproj"; sourceTree = "<group>"; };
 		D8D251A0223B56C300F5173D /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		D8D2522C223B6DCD00F5173D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.Strings; sourceTree = "<group>"; };
 		D8D2522E223B6DE100F5173D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.Strings"; sourceTree = "<group>"; };
@@ -477,7 +461,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D84D053E22521335009D251B /* libRCTVideo.a in Frameworks */,
+				D8A6A4522255C1020066FDF2 /* libRNFS.a in Frameworks */,
 				D84D02B5224DE456009D251B /* VideoToolbox.framework in Frameworks */,
 				D84D02B3224DE44C009D251B /* QuartzCore.framework in Frameworks */,
 				D84D02B1224DE43C009D251B /* OpenGLES.framework in Frameworks */,
@@ -491,7 +475,6 @@
 				D84D02A1224DE266009D251B /* AVFoundation.framework in Frameworks */,
 				D84D029F224DE25B009D251B /* AudioToolbox.framework in Frameworks */,
 				D8D252B922421B7600F5173D /* libFastImage.a in Frameworks */,
-				D8FDFC792228CCBC00013176 /* libRNFS.a in Frameworks */,
 				D8FDFC6F2228CC9100013176 /* libRNAudio.a in Frameworks */,
 				D8472C722227C9AF00D4AEA0 /* libRCTWebSocket.a in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
@@ -670,7 +653,6 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				D84D053522521314009D251B /* RCTVideo.xcodeproj */,
 				D8D2528922421B6700F5173D /* FastImage.xcodeproj */,
 				D8D251A0223B56C300F5173D /* React.xcodeproj */,
 				D8FDFC702228CCB000013176 /* RNFS.xcodeproj */,
@@ -744,15 +726,6 @@
 				D8472C5D2227C95900D4AEA0 /* libRCTWebSocket-tvOS.a */,
 				D8472C5F2227C95900D4AEA0 /* libfishhook.a */,
 				D8472C612227C95900D4AEA0 /* libfishhook-tvOS.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		D84D053622521314009D251B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D84D053B22521314009D251B /* libRCTVideo.a */,
-				D84D053D22521314009D251B /* libRCTVideo.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1006,10 +979,6 @@
 					ProjectRef = 00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */;
 				},
 				{
-					ProductGroup = D84D053622521314009D251B /* Products */;
-					ProjectRef = D84D053522521314009D251B /* RCTVideo.xcodeproj */;
-				},
-				{
 					ProductGroup = D8472C542227C95900D4AEA0 /* Products */;
 					ProjectRef = D8472C532227C95900D4AEA0 /* RCTWebSocket.xcodeproj */;
 				},
@@ -1186,20 +1155,6 @@
 			fileType = archive.ar;
 			path = "libfishhook-tvOS.a";
 			remoteRef = D8472C602227C95900D4AEA0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D84D053B22521314009D251B /* libRCTVideo.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRCTVideo.a;
-			remoteRef = D84D053A22521314009D251B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D84D053D22521314009D251B /* libRCTVideo.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRCTVideo.a;
-			remoteRef = D84D053C22521314009D251B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		D8D2519F223B43B700F5173D /* libRNCViewpager.a */ = {
@@ -1626,11 +1581,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = K2XN94DG67;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/../node_modules/@react-native-community/viewpager/ios/**",
-					"$(SRCROOT)/../node_modules/react-native-blur-overlay/ios",
-				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = easyMusic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -1652,11 +1603,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = K2XN94DG67;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/../node_modules/@react-native-community/viewpager/ios/**",
-					"$(SRCROOT)/../node_modules/react-native-blur-overlay/ios",
-				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = easyMusic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (

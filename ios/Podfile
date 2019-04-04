@@ -24,15 +24,15 @@ target 'easyMusic' do
       'RCTWebSocket',
       'RCTCameraRoll'
     ]
-    pod 'yoga', path: "#{rn_path}/ReactCommon/yoga/yoga.podspec"
+    pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
     # React Native third party dependencies podspecs
     # pod 'DoubleConversion', :podspec => "#{rn_path}/third-party-podspecs/DoubleConversion.podspec"
-    pod 'glog', :podspec => "#{rn_path}/third-party-podspecs/glog.podspec"
+    # pod 'glog', :podspec => "#{rn_path}/third-party-podspecs/glog.podspec"
     # If you are using React Native <0.54, you will get the following error:
     # "The name of the given podspec `GLog` doesn't match the expected one `glog`"
     # Use the following line instead:
     # pod 'GLog', :podspec => "#{rn_path}/third-party-podspecs/GLog.podspec"
-    pod 'Folly', :podspec => "#{rn_path}/third-party-podspecs/Folly.podspec"
+     pod 'Folly', :podspec => "#{rn_path}/third-party-podspecs/Folly.podspec"
 
     pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
 
@@ -53,7 +53,7 @@ target 'easyMusic' do
 
   pod 'RNSound', :path => '../node_modules/react-native-sound'
 
-  pod 'react-native-fast-image', :path => '../node_modules/react-native-fast-image'
+  # pod 'react-native-fast-image', :path => '../node_modules/react-native-fast-image'
 
   pod 'react-native-video', :path => '../node_modules/react-native-video'
 
