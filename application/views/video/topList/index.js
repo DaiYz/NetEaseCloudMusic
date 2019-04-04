@@ -68,7 +68,7 @@ const ListItem = (props) => {
           end={{ x: 0.5, y: 1 }}
           colors={['rgba(0,0,0,0.2)', 'rgba(0,0,0,0)']} style={{ flexDirection: 'row', alignItems: 'center', position: 'absolute', top: 0, right: 0, width: '100%', justifyContent: 'flex-end', borderRadius: 3, paddingTop: 4, paddingRight: 6 }}>
           <SvgIcon path={iconPath.mvPlayOut} size={11} fill={['#fff']} />
-          <Text style={{ color: '#fff', fontSize: 12, marginLeft: 4 }}>{utils.Tools.processsNum(item.playCount)}</Text>
+          <Text style={{ color: '#fff', fontSize: 12, marginLeft: 4 }}>{utils.Tools.processNum(item.playCount)}</Text>
         </LinearGradient>
         <View style={{ bottom: 0, left: 0, right: 0, position: 'absolute', paddingHorizontal: 10 }}>
           <View style={{ flexDirection: 'row', alignItems: 'flex-end' }}>

@@ -1,7 +1,7 @@
 import { Dimensions, Platform, PixelRatio, StatusBar } from 'react-native'
 import { Header } from 'react-navigation'
+import moment from 'moment'
 const { width, height } = Dimensions.get('window')
-
 const IPhoneXPaddingTop = 24
 const iosStatusBarHeight = 20
 const androidStatusBarHeight = StatusBar.currentHeight || 0
@@ -61,7 +61,7 @@ const NavHeight = (isCustom: true) => {
   return (Platform.OS === 'ios' ? IosNavHeader : AndroidNavHeader)
 }
 
-const processsNum = (num = 0) => {
+const processNum = (num = 0) => {
   if (num >= 10000) {
     return `${parseInt(num / 10000)}万`
   }
@@ -71,10 +71,56 @@ const processsNum = (num = 0) => {
   return `${num}`
 }
 
+const processTime = (ts) => {
+  const diffDay = moment().diff(moment(ts), 'days')
+  let str = ''
+  switch (diffDay) {
+    case 0:
+      str = `${moment(ts).format('HH:mm')}`
+      break
+    case 1:
+      str = `昨天 ${moment(ts).format('HH:mm')}`
+      break
+    case 2:
+      str = `前天 ${moment(ts).format('HH:mm')}`
+      break
+    default:
+      str = `${moment(ts).format('MoDo HH:mm')}`
+      break
+  }
+  return str
+}
+
+const videoDuration = (s) => {
+  const h = 3600
+  const m = 60
+  let H = ''
+  let M = '00'
+  let S = '00'
+  if (s < 3600) {
+    M = `${parseInt(s / m) > 9 ? parseInt(s / m) : '0' + parseInt(s / m)}`
+    S = `${parseInt(s % m) > 9 ? parseInt(s % m) : '0' + parseInt(s % m)}`
+  } else {
+    let leftS = s % h
+    H = `${parseInt(s / h) > 9 ? parseInt(s / h) : '0' + parseInt(s / h)}`
+    if (leftS >= 60) {
+      M = `${parseInt(leftS / m) > 9 ? parseInt(leftS / m) : '0' + parseInt(leftS / m)}`
+    }
+    S = `${parseInt(leftS % m) > 9 ? parseInt(leftS % m) : '0' + parseInt(leftS % m)}`
+  }
+  if (H) {
+    return `${H}:${M}:${S}`
+  } else {
+    return `${M}:${S}`
+  }
+}
+
 export default {
   Px2Dp,
   FontSize,
   isIPhoneX,
   NavHeight,
-  processsNum
+  processNum,
+  videoDuration,
+  processTime
 }

@@ -96,7 +96,7 @@ class TopListDetail extends Component {
               </View>
             </View>
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 28, marginTop: 18, marginBottom: 10 }}>
-              {this.renderFourTab(utils.Tools.processsNum(commentCount), utils.Tools.processsNum(shareCount))}
+              {this.renderFourTab(utils.Tools.processNum(commentCount), utils.Tools.processNum(shareCount))}
             </View>
           </View>}
           headerTitle={detail.name}
@@ -132,7 +132,7 @@ class TopListDetail extends Component {
                 >
                   <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                     <Text style={{ color: '#fff', fontSize: 14 }}>＋</Text>
-                    <Text style={{ color: '#fff', fontSize: 12 }}>收藏 {`(${utils.Tools.processsNum(subscribedCount)})`}</Text>
+                    <Text style={{ color: '#fff', fontSize: 12 }}>收藏 {`(${utils.Tools.processNum(subscribedCount)})`}</Text>
                   </View>
                 </LinearGradient>
               </View>

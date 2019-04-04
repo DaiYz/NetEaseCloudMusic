@@ -39,7 +39,7 @@ class Host extends Component {
           {
             data: this.DjModel.formattedList,
             renderItem: (data) => {
-              const { item, index } = data
+              const { item } = data
               const { type } = item
               switch (type) {
                 case 'sup':
@@ -115,7 +115,7 @@ const Footer = (props) => {
 
 const Normal = (props) => {
   const { data } = props
-  const { item, index } = data
+  const { item } = data
   const { type } = item
   return (
     <View style={{ paddingHorizontal: 8, backgroundColor: '#f2f4f5' }}>
@@ -133,7 +133,7 @@ const Normal = (props) => {
           item.data.length > 0
             ? item.data.map((val, i) =>
               <View key={i}
-                style={[{ marginHorizontal: (i === 1 || i === 4) ? ImagePadding / 2 : 0 }, styles.coverContainer]}>
+                style={[{ marginHorizontal: (i % 3 === 1) ? ImagePadding / 2 : 0 }, styles.coverContainer]}>
                 <View>
                   <ImagePlaceholder
                     source={{ uri: val.picUrl }}
@@ -175,7 +175,7 @@ const HighQuality = (props) => {
             item.data.length > 0
               ? item.data.map((val, i) =>
                 <View key={i}
-                  style={[{ marginHorizontal: (i === 1 || i === 4) ? ImagePadding / 2 : 0 }, styles.coverContainer]}>
+                  style={[{ marginHorizontal: (i % 3 === 1) ? ImagePadding / 2 : 0 }, styles.coverContainer]}>
                   <View>
                     <ImagePlaceholder
                       source={{ uri: val.picUrl }}

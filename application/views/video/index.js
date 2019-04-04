@@ -123,7 +123,7 @@ const QualityMv = (props) => {
                   end={{ x: 0.5, y: 1 }}
                   colors={['rgba(0,0,0,0.2)', 'rgba(0,0,0,0)']} style={{ flexDirection: 'row', alignItems: 'center', position: 'absolute', top: 0, right: 0, width: '100%', justifyContent: 'flex-end', borderRadius: 3, paddingTop: 4, paddingRight: 6 }}>
                   <SvgIcon path={iconPath.mvPlayOut} size={11} fill={['#fff']} />
-                  <Text style={{ color: '#fff', fontSize: 12, marginLeft: 4 }}>{utils.Tools.processsNum(item.playCount)}</Text>
+                  <Text style={{ color: '#fff', fontSize: 12, marginLeft: 4 }}>{utils.Tools.processNum(item.playCount)}</Text>
                 </LinearGradient>
               </TouchableOpacity>
             )
@@ -160,7 +160,7 @@ const TopView = (props) => {
             data.map((item, index) => {
               if (index === 0) {
                 return (
-                  <View key={index} style={{ justifyContent: 'center', alignItems: 'center', zIndex: 999 }}>
+                  <View key={index} style={{ justifyContent: 'center', alignItems: 'center', elevation: 999, zIndex: 999 }}>
                     <ImagePlaceholder
                       source={{ uri: item.cover }}
                       style={{ width: (width - 20) / 4, height: (width - 20) / 8, borderRadius: 3 }}
