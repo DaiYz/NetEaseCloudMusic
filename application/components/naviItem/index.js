@@ -5,10 +5,14 @@ import PropTypes from 'prop-types'
 const { width } = Dimensions.get('window')
 class NavItem extends React.Component {
   renderRight = () => {
-    const { itemType, rightExtraTitle, rightIcon } = this.props
+    const { itemType, rightExtraTitle, rightIcon, switchProps } = this.props
     if (itemType === 'switch') {
       return (
-        <Switch />
+        <Switch
+          style={{ shadowOpacity: 0 }}
+          trackColor={{ true: '#ce3d3a' }}
+          {...switchProps}
+        />
       )
     } else {
       return (
@@ -56,13 +60,12 @@ NavItem.propTypes = {
   rightIcon: PropTypes.element,
   rightExtraTitle: PropTypes.element,
   onItemPress: PropTypes.func,
-  itemTitle: PropTypes.string,
-  itemTitleStyle: ViewPropTypes.style
+  itemTitle: PropTypes.string
 }
 NavItem.defaultProps = {
   itemType: 'normal',
   showItemSeparator: true,
-  rightIcon: <SimpleLine name={'arrow-right'} size={12} color={'#999'} />
+  rightIcon: <SimpleLine name={'arrow-right'} size={12} color={'#bababa'} />
 }
 
 const styles = StyleSheet.create({

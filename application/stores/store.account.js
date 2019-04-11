@@ -4,27 +4,52 @@ import { NavigationActions } from 'react-navigation'
 import utils from '../utils'
 
 class account {
-  @observable badge: number = 6
-
   @observable userProfile = {
-    'userId': 1812919102,
-    'vipType': 0,
-    'accountStatus': 0,
-    'gender': 0,
+    'experts': {},
+    'backgroundImgId': 109951162868126480,
+    'userType': 0,
+    'mutual': false,
+    'remarkName': null,
+    'expertTags': null,
+    'authStatus': 0,
+    'backgroundUrl': 'http://p1.music.126.net/_f8R60U9mZ42sSNvdPn2sQ==/109951162868126486.jpg',
     'nickname': 'test',
     'birthday': -2209017600000,
+    'avatarImgId': 109951163250239070,
     'city': 310101,
-    'djStatus': 0,
-    'experts': {},
-    'userType': 0,
+    'accountStatus': 0,
+    'userId': 1812919102,
+    'vipType': 0,
+    'gender': 0,
+    'defaultAvatar': true,
     'avatarUrl': 'https://p1.music.126.net/RLeBJe4D1ZzUtltxfoKDMg==/109951163250239066.jpg',
-    'backgroundUrl': 'http://p1.music.126.net/_f8R60U9mZ42sSNvdPn2sQ==/109951162868126486.jpg'
+    'province': 310000,
+    'djStatus': 0,
+    'avatarImgIdStr': '109951163250239066',
+    'backgroundImgIdStr': '109951162868126486',
+    'signature': '',
+    'authority': 0,
+    'description': '',
+    'detailDescription': '',
+    'followed': false,
+    'avatarImgId_str': '109951163250239066',
+    'artistIdentity': [],
+    'followeds': 0,
+    'follows': 3,
+    'cCount': 0,
+    'blacklist': false,
+    'eventCount': 9,
+    'sDJPCount': 0,
+    'allSubscribedCount': 0,
+    'playlistCount': 1,
+    'playlistBeSubscribedCount': 0,
+    'sCount': 0
   }
 
   @persist @observable authToken: String = ''
 
   @action.bound add () {
-    let newBadge = this.badge
+    let newBadge = this.userProfile.eventCount
     newBadge++
     this.badge = newBadge
     utils.global.navigator.dispatch(NavigationActions.setParams({

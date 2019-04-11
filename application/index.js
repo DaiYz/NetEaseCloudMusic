@@ -3,6 +3,7 @@ import { View, StatusBar, AsyncStorage, UIManager } from 'react-native'
 import Stores from './stores'
 import { observer, Provider, inject } from 'mobx-react'
 import { create } from 'mobx-persist'
+import Orientation from 'react-native-orientation'
 import Navigator from './navigator.config'
 import utils from './utils'
 import moment from 'moment'
@@ -30,6 +31,7 @@ class HomeScreen extends Component {
   constructor (props) {
     super(props)
     UIManager.setLayoutAnimationEnabledExperimental && UIManager.setLayoutAnimationEnabledExperimental(true)
+    Orientation.unlockAllOrientations()
     this.state = {
       currentScreen: 'MainTabBar',
       prevScreen: null

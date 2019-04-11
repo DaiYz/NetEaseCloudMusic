@@ -57,12 +57,6 @@ class FriendsScreen extends React.Component {
   render () {
     return (
       <View style={{ flex: 1 }}>
-        {/* <SegmentedControl */}
-        {/* selectedIndex={this.state.selectedIndex} */}
-        {/* onValueChange={(index) => { */}
-        {/* this.setState({ selectedIndex: index }) */}
-        {/* }} */}
-        {/* /> */}
         <FlatList
           keyExtractor={(item, index) => `${index}`}
           data={this.FriendsModel.list.slice()}

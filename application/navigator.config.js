@@ -54,7 +54,7 @@ const TAB_BAR_DEFAULT_OPTIONS = {
     }
     const tabBarIcon = ({ focused, tintColor }) => {
       const { routeName, params = {} } = navigation.state
-      const badge = params?.badge ? params.badge : Stores.account.badge
+      const badge = params?.badge ? params.badge : Stores.account.userProfile.eventCount
       let iconName
       if (routeName === 'Find') {
         iconName = iconPath.easy

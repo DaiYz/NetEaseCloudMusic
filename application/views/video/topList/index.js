@@ -25,7 +25,7 @@ class MvTopList extends Component {
 
   goPage = (detail) => {
     const { navigation } = this.props
-    navigation.navigate('TopListDetail', { detail })
+    navigation.navigate('VideoDetail', { detail })
   }
 
   loadMore = async () => {
@@ -42,7 +42,7 @@ class MvTopList extends Component {
             </View>}
             keyExtractor={(item, index) => `${index}`}
             data={this.TopModel.topList.slice()}
-            renderItem={(data) => <ListItem data={data} />}
+            renderItem={(data) => <ListItem data={data} goPage={this.goPage} />}
             ItemSeparatorComponent={() => <View style={{ width, height: 4, backgroundColor: '#fff' }} />}
           />
         </SafeAreaView>
@@ -54,10 +54,10 @@ class MvTopList extends Component {
 }
 
 const ListItem = (props) => {
-  const { data } = props
+  const { data, goPage } = props
   const { item, index } = data
   return (
-    <TouchableOpacity activeOpacity={0.7}>
+    <TouchableOpacity activeOpacity={0.7} onPress={() => goPage()}>
       <View>
         <ImagePlaceholder
           source={{ uri: item.cover }}

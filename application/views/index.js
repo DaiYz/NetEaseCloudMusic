@@ -1,6 +1,7 @@
 
 import Find from './find'
 import Video from './video'
+import VideoDetail from './video/VideoDetail'
 import Mine from './mine'
 import Friends from './friends'
 import Account from './account'
@@ -21,5 +22,6 @@ export default {
   PayQuality,
   TopList,
   TopListDetail,
+  VideoDetail,
   MvTopList
 }

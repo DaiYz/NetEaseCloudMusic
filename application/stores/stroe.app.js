@@ -7,7 +7,7 @@ import utils from '../utils'
 import Splash from 'react-native-splash-screen'
 
 class app {
-  @persist @observable appTheme = 'blue'
+  @persist @observable appTheme = 'light'
   @observable theme = blue
   @observable banners = []
   @observable scrollEnabled = true
@@ -37,7 +37,6 @@ class app {
 
   @action.bound async init (token, theme) {
     let targetRout = 'Auth'
-    console.log(token)
     if (token.length > 0) {
       targetRout = 'App'
     }
@@ -46,7 +45,6 @@ class app {
     utils.global.navigator.dispatch(NavigationActions.navigate({
       routeName: targetRout
     }))
-    Splash.hide()
   }
 
   @action.bound async getBanner () {
@@ -55,7 +53,6 @@ class app {
       if (data.code === 200) {
         this.banners = data.banners
       }
-      console.log(data)
     } catch (e) {
       console.log(e)
     }
