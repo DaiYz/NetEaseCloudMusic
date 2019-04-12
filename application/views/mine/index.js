@@ -77,6 +77,7 @@ class MineScreen extends Component {
             return <MineSection title={title} listNum={index === 0 ? this.MineModel.createList.length : this.MineModel.favList.length} isShowItem={this.MineModel.isShowItem} index={index} show={index === 0 ? this.MineModel.showCreate : this.MineModel.showFav} />
           }
           }
+          stickySectionHeadersEnabled
           sections={this.MineModel.MineList}
         />
       </View>

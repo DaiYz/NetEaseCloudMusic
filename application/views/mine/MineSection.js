@@ -1,8 +1,6 @@
 import React from 'react'
-import { View, StyleSheet, ViewPropTypes, Animated, LayoutAnimation, Dimensions, Text, TouchableOpacity } from 'react-native'
+import { View, Animated, Text, TouchableOpacity } from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons'
-import PropTypes from 'prop-types'
-const { width, height } = Dimensions.get('window')
 const AnimatedIcon = Animated.createAnimatedComponent(Ionicons)
 class MineSection extends React.Component {
   constructor (props) {
@@ -23,7 +21,7 @@ class MineSection extends React.Component {
   render () {
     const { title = '', listNum = 0 } = this.props
     return (
-      <View style={{ backgroundColor: '#f2f4f5', height: 41, paddingHorizontal: 14, flexDirection: 'row', justifyContent: 'space-between' }} onLayout={(e) => console.log(e.nativeEvent)}>
+      <View style={{ backgroundColor: '#f2f4f5', height: 41, paddingHorizontal: 14, flexDirection: 'row', justifyContent: 'space-between' }}>
         <TouchableOpacity onPress={() => this.rotate()} activeOpacity={1} style={{ flexDirection: 'row', alignItems: 'center' }}>
           <AnimatedIcon
             name={'ios-arrow-forward'}

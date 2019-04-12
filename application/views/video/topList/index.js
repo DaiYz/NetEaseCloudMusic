@@ -23,13 +23,9 @@ class MvTopList extends Component {
     await this.TopModel.getTopList(false, 50)
   }
 
-  goPage = (detail) => {
+  goPage = (id) => {
     const { navigation } = this.props
-    navigation.navigate('VideoDetail', { detail })
-  }
-
-  loadMore = async () => {
-
+    navigation.navigate('VideoDetail', { id })
   }
 
   render () {
@@ -57,7 +53,7 @@ const ListItem = (props) => {
   const { data, goPage } = props
   const { item, index } = data
   return (
-    <TouchableOpacity activeOpacity={0.7} onPress={() => goPage()}>
+    <TouchableOpacity activeOpacity={1} onPress={() => goPage(item.id)}>
       <View>
         <ImagePlaceholder
           source={{ uri: item.cover }}

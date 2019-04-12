@@ -37,9 +37,9 @@ class VideoScreen extends React.Component {
     await this.MvModel.getMoveList()
   }
 
-  goPage = (route = 'MvTopList') => {
+  goPage = (route = 'MvTopList', data = {}) => {
     const { navigation } = this.props
-    navigation.navigate(route)
+    navigation.navigate(route, data)
   }
 
   render () {
@@ -55,7 +55,7 @@ class VideoScreen extends React.Component {
         <FlatList
           ListHeaderComponent={
             <View style={{ marginTop: 10 }}>
-              <QualityMv data={this.MvModel.qualityMvList.slice()} />
+              <QualityMv data={this.MvModel.qualityMvList.slice()} goPage={this.goPage} />
               <TopView data={this.MvModel.topMvList.slice()} updateTime={this.MvModel.updateTime} goPage={this.goPage} />
               <More />
             </View>
@@ -63,7 +63,7 @@ class VideoScreen extends React.Component {
           keyExtractor={(item, index) => `${index}`}
           data={this.MvModel.mvList.slice()}
           ItemSeparatorComponent={() => <View style={{ width, height: 6, backgroundColor: '#f5f5f5' }} />}
-          renderItem={(data) => <ListItem data={data} />}
+          renderItem={(data) => <ListItem data={data} goPage={this.goPage} />}
         />
       </View>
     )
@@ -73,10 +73,10 @@ class VideoScreen extends React.Component {
 export default VideoScreen
 
 const ListItem = (props) => {
-  const { data } = props
+  const { data, goPage } = props
   const { item } = data
   return (
-    <TouchableOpacity activeOpacity={0.7} style={{ paddingHorizontal: 8, paddingTop: 6 }}>
+    <TouchableOpacity activeOpacity={0.7} style={{ paddingHorizontal: 8, paddingTop: 6 }} onPress={() => goPage('VideoDetail', { id: item.id })}>
       <View>
         <View style={{ justifyContent: 'center', alignItems: 'center' }}>
           <ImagePlaceholder
@@ -93,7 +93,7 @@ const ListItem = (props) => {
 }
 
 const QualityMv = (props) => {
-  const { data } = props
+  const { data, goPage } = props
   return (
     <View style={{ borderBottomWidth: StyleSheet.hairlineWidth, borderColor: '#ddd', paddingBottom: 16 }}>
       <View style={{ paddingHorizontal: 8 }}>
@@ -104,7 +104,7 @@ const QualityMv = (props) => {
         <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
           {
             data.map((item, index) =>
-              <TouchableOpacity key={index} activeOpacity={0.7} style={{
+              <TouchableOpacity key={index} onPress={() => goPage('VideoDetail', { id: item.id })} activeOpacity={0.7} style={{
                 width: (width - 20) / 2,
                 paddingBottom: 20,
                 marginRight: (index % 2 === 0) ? 4 : 0,

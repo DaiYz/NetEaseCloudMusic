@@ -8,7 +8,7 @@
 		<string>zh_CN</string>
 	</array>
 	<key>CFBundleDisplayName</key>
-	<string>easyMusic</string>
+	<string>网易云音乐</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

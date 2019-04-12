@@ -118,7 +118,7 @@ class VideoPlayerContainer extends React.Component {
     if (fullScreen) {
       Orientation.lockToPortrait()
     } else {
-      Orientation.lockToLandscapeRight()
+      Platform.OS === 'ios' ? Orientation.lockToLandscapeRight() : Orientation.lockToLandscapeLeft()
     }
     this.setState({ fullScreen: !fullScreen })
   }
@@ -195,7 +195,7 @@ class VideoPlayerContainer extends React.Component {
 
   render () {
     const { loadStart, showControl, fullScreen, paused, isBuffering, loadEnd, forward, backward, currentTime } = this.state
-    const { videoDuration, source, videoProps = {}, sliderProps = {}, headerLeftIcon } = this.props
+    const { videoDuration, source, videoProps = {}, sliderProps = {}, headerLeftIcon, loading } = this.props
     return (
       <View style={{ flex: 1 }} onLayout={(e) => {
         let { width, height } = e.nativeEvent.layout
@@ -203,31 +203,45 @@ class VideoPlayerContainer extends React.Component {
         if (isLandscape) {
           this._clickStartAnimation(this.setState({ width, height: height, paddingTop: 0, paddingHorizontal: IPhoneXSafeArea }))
         } else {
-          this._clickStartAnimation(this.setState({ width: WIDTH, height: WIDTH / 16 * 9, paddingHorizontal: 0 }))
+          this._clickStartAnimation(this.setState({ width: WIDTH,
+            height: WIDTH / 16 * 9,
+            paddingHorizontal: 0,
+            paddingTop: videoPaddingTop
+          }))
         }
       }}>
         <HeaderStatusBar showStatusBar={!showControl} />
-        <View style={{ backgroundColor: '#000', paddingTop: this.state.paddingTop }}>
-          <Video
-            style={
+        <View style={{ backgroundColor: '#000',
+          paddingTop: this.state.paddingTop,
+          zIndex: 999,
+          elevation: 999 }}>
+          {
+            loading ? <View style={
               {
                 width: this.state.width,
                 height: this.state.height
               }
-            }
-            repeat
-            onProgress={this.onProgress}
-            paused={this.state.paused}
-            source={source}
-            ref={player => { this.player = player }}
-            onBuffer={this.onBuffer}
-            onLoad={this.onLoad}
-            onError={(e) => console.log(e, 'error')}
-            onEnd={() => {
-              this.setState({ loadEnd: true })
-            }}
-            {...videoProps}
-          />
+            } />
+              : <Video
+                style={
+                  {
+                    width: this.state.width,
+                    height: this.state.height
+                  }
+                }
+                onProgress={this.onProgress}
+                paused={this.state.paused}
+                source={source}
+                ref={player => { this.player = player }}
+                onBuffer={this.onBuffer}
+                onLoad={this.onLoad}
+                onError={(e) => console.log(e, 'error')}
+                onEnd={() => {
+                  this.setState({ loadEnd: true })
+                }}
+                {...videoProps}
+              />
+          }
           <View style={{
             position: 'absolute',
             bottom: 0,
@@ -376,6 +390,8 @@ const styles = StyleSheet.create({
   container: {
     bottom: -4,
     left: 0,
+    zIndex: 999,
+    elevation: 999,
     right: 0,
     position: 'absolute',
     height: 10
@@ -417,6 +433,7 @@ const styles = StyleSheet.create({
 })
 
 VideoPlayerContainer.propTypes = {
+  loading: PropTypes.bool,
   source: PropTypes.oneOfType([
     PropTypes.shape({
       uri: PropTypes.string
@@ -431,6 +448,7 @@ VideoPlayerContainer.propTypes = {
 }
 
 VideoPlayerContainer.defaultProps = {
+  loading: true,
   source: { uri: 'http://vodkgeyttp8.vod.126.net/cloudmusic/593d/core/0c65/326c08e6fb50fdf5d84ab42288d43f5a.mp4?wsSecret=d2a030a55207893d9f3cc93121050a94&wsTime=1554957252' },
   videoDuration: 0,
   onNavLeftButtonPress: () => {},
