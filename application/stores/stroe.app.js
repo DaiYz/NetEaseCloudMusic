@@ -5,7 +5,7 @@ import { yellow, blue } from '../localize/theme'
 import { NavigationActions } from 'react-navigation'
 import utils from '../utils'
 import Splash from 'react-native-splash-screen'
-
+const PLAYMODE = [0, 1, 2]
 class app {
   @persist @observable appTheme = 'light'
   @observable theme = blue
@@ -15,6 +15,7 @@ class app {
     id: '121212121',
     playing: false
   }
+  @observable playMode = 0
   @observable currentTheme = '蓝色主题'
 
   @action.bound changeTheme (type: String) {
@@ -56,6 +57,13 @@ class app {
     } catch (e) {
       console.log(e)
     }
+  }
+
+  @action.bound changePlayMode () {
+    if (this.playMode === 2) {
+      this.playMode = 0
+    }
+    this.playMode += 1
   }
 }
 

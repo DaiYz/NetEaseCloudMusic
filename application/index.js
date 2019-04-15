@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, StatusBar, AsyncStorage, UIManager } from 'react-native'
+import { View, StatusBar, AsyncStorage, UIManager, Platform } from 'react-native'
 import Stores from './stores'
 import { observer, Provider, inject } from 'mobx-react'
 import { create } from 'mobx-persist'
@@ -70,9 +70,11 @@ class HomeScreen extends Component {
   }
 
   render () {
+    const { currentScreen } = this.state
     return (
       <View style={{ flex: 1 }}>
         <StatusBar
+          hidden={currentScreen === null || (Platform.OS === 'ios' && currentScreen === 'VideoDetail')}
           StatusBarAnimation={'fade'}
           backgroundColor={'#ce3d3a'}
           barStyle={'light-content'} />

@@ -3,9 +3,7 @@ import {
   View,
   Text,
   FlatList,
-  TouchableOpacity,
-  Dimensions
-} from 'react-native'
+  TouchableOpacity } from 'react-native'
 import WaveLoading from '../../components/wave'
 import VideoPlayerContainer from '../../components/videoPlayer'
 import { MvDetailModel } from './model'
@@ -14,7 +12,6 @@ import SvgIcon from 'react-native-svg-iconfont'
 import * as iconPath from '../../source/svg'
 import { VideoSimiItem, VideoTopItem, VideoCommentItem, StickHeader } from './VideoDetailItem'
 import { inject, observer } from 'mobx-react'
-const { width: WIDTH, height: HEIGHT } = Dimensions.get('window')
 const isIPhoneX = utils.Tools.isIPhoneX()
 @inject('account', 'app')
 @observer

@@ -12,13 +12,12 @@ import {
   SectionList,
   ViewPropTypes as RNViewPropTypes, LayoutAnimation
 } from 'react-native'
-import { inject, observer } from 'mobx-react'
 import SimpleLine from 'react-native-vector-icons/SimpleLineIcons'
 import PropTypes from 'prop-types'
 import SvgIcon from 'react-native-svg-iconfont'
 import utils from '../../utils'
 import * as iconPath from '../../source/svg'
-const { height, width } = Dimensions.get('window')
+const { width } = Dimensions.get('window')
 const AnimatedSectionList = Animated.createAnimatedComponent(SectionList)
 const IsIPhoneX = utils.Tools.isIPhoneX()
 const IPhoneXPaddingTop = 24

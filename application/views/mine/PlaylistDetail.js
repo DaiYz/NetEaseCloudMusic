@@ -1,38 +1,43 @@
 import React, { Component } from 'react'
-import { View, TouchableOpacity, Text, ScrollView, StyleSheet, Dimensions, SafeAreaView } from 'react-native'
-import ImagePlaceholder from '../../../components/imagePlaceholder'
+import { View, TouchableOpacity, Text, StyleSheet, Dimensions } from 'react-native'
+import ImagePlaceholder from '../../components/imagePlaceholder'
 import LinearGradient from 'react-native-linear-gradient'
-import moment from 'moment'
-import utils from '../../../utils'
-import WaveLoading from '../../../components/wave'
+import utils from '../../utils'
+import WaveLoading from '../../components/wave'
 import SvgIcon from 'react-native-svg-iconfont'
 import SimpleLine from 'react-native-vector-icons/SimpleLineIcons'
-import ParallaxStickListView from '../../../components/parallaxStickView'
-import { TopListModel } from '../model'
+import ParallaxStickListView from '../../components/parallaxStickView'
 import { inject, observer } from 'mobx-react'
-import images from '../../../source/images'
-import * as iconPath from '../../../source/svg'
+import { PlaylistModel } from './model'
+import * as iconPath from '../../source/svg'
 const { width, height } = Dimensions.get('window')
 @inject('account', 'app')
 @observer
-class TopListDetail extends Component {
-  TopListModel = new TopListModel()
+class PlaylistDetail extends Component {
+  PlaylistModel = new PlaylistModel()
   static navigationOptions = ({ navigation }) => {
     return {
       header: null
     }
   }
+
   async componentDidMount () {
     const { navigation } = this.props
     const { state = {} } = navigation
     const { params = {} } = state
     const { detail = {} } = params
-    await this.TopListModel.getTopListDetail(detail.id)
+    await this.PlaylistModel.getList(detail.id)
   }
 
   onLeftPress = () => {
     const { navigation } = this.props
     navigation.goBack()
+  }
+
+  goPage = (detail = {}, route = 'AudioScreen') => {
+    const { navigation } = this.props
+    console.log(detail)
+    navigation.navigate(route, { detail })
   }
 
   renderFourTab = (comment = '评论', share = '分享') => {
@@ -67,13 +72,13 @@ class TopListDetail extends Component {
     const { state = {} } = navigation
     const { params = {} } = state
     const { detail = {} } = params
-    const { topListDetail, detailList, loading } = this.TopListModel
-    const { creator = {}, tracks = [], shareCount = 0, commentCount = 0, subscribedCount = 0, playCount = 0 } = topListDetail
-    const { avatarUrl = '', nickname = '' } = creator
-    let source = avatarUrl.length > 0 ? { uri: avatarUrl } : images.placeholder
+    const { playlistDetail, trackList, loading } = this.PlaylistModel
+    const { creator = {} } = detail
+    const { shareCount = 0, commentCount = 0, subscribedCount = 0, playCount = 0, description = '' } = playlistDetail
     return (
       <View style={{ flex: 1 }}>
         <ParallaxStickListView
+          headerDefaultTitle={'歌单'}
           listContainerStyle={{ borderTopRightRadius: 8, borderTopLeftRadius: 8 }}
           leftPress={this.onLeftPress}
           backgroundImage={{ uri: detail.coverImgUrl }}
@@ -83,16 +88,18 @@ class TopListDetail extends Component {
               <ImagePlaceholder source={{ uri: detail.coverImgUrl }} style={{ width: width / 3, height: width / 3, borderRadius: 3 }} />
               <View style={{ flex: 1, marginLeft: 18, justifyContent: 'space-between', paddingTop: 14, paddingBottom: 8 }}>
                 <Text style={{ color: '#fff', fontSize: 16, lineHeight: 16 }}>{detail.name}</Text>
-                <Text style={{ color: '#ffffff80', fontSize: 11 }}>{`最近更新: ${moment().format('MoDo')}`}</Text>
                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                  <ImagePlaceholder source={source} style={{ width: 30, height: 30, borderRadius: 15 }} />
-                  <Text style={{ color: '#ffffff80', marginHorizontal: 6 }}>{nickname}</Text>
+                  <View style={{ flexDirection: 'row', alignItems: 'center', flex: 1 }}>
+                    <ImagePlaceholder source={{ uri: creator.avatarUrl }} style={{ width: 30, height: 30, borderRadius: 15 }} />
+                    <Text style={{ color: '#ffffff80', marginHorizontal: 6 }}>{creator.nickname}</Text>
+                  </View>
                   <SimpleLine
                     name={'arrow-right'}
                     size={12}
                     color={'#ffffff80'}
                   />
                 </View>
+                <Text style={{ color: '#ffffff80', fontSize: 12, lineHeight: 18 }} numberOfLines={2}>{description}</Text>
               </View>
             </View>
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 28, marginTop: 18, marginBottom: 10 }}>
@@ -104,9 +111,9 @@ class TopListDetail extends Component {
             loading ? <View style={{ backgroundColor: '#fff', width, height }}><Loading style={{ marginTop: 80 }} /></View> : null
           }
           scrollImageHeight={400}
-          sections={detailList}
+          sections={trackList}
           renderItem={(data) => {
-            return <ListItem data={data} />
+            return <ListItem data={data} goPage={this.goPage} />
           }}
           renderStickHeader={() =>
             <View style={{ backgroundColor: '#fff',
@@ -122,7 +129,7 @@ class TopListDetail extends Component {
               <SvgIcon path={iconPath.topPlay} fill={['#333']} size={20} />
               <View style={{ flex: 1, height: '100%', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginLeft: 10, borderBottomWidth: StyleSheet.hairlineWidth, borderColor: '#ddd' }} >
                 <View>
-                  <Text>播放全部<Text style={{ color: '#999' }}> (共{tracks.length}首)</Text></Text>
+                  <Text>播放全部<Text style={{ color: '#999' }}> (共{trackList[0].data.length}首)</Text></Text>
                 </View>
                 <LinearGradient
                   start={{ x: 0, y: 0.5 }}
@@ -145,10 +152,10 @@ class TopListDetail extends Component {
 }
 
 const ListItem = (props) => {
-  const { data } = props
+  const { data, goPage } = props
   const { item, index } = data
   return (
-    <View style={{ backgroundColor: '#fff',
+    <TouchableOpacity onPress={() => goPage(item)} activeOpacity={0.7} style={{ backgroundColor: '#fff',
       flexDirection: 'row',
       overflow: 'hidden',
       width,
@@ -164,7 +171,7 @@ const ListItem = (props) => {
           <Text numberOfLines={1} style={{ fontSize: 12, color: '#999', marginVertical: 6 }}>{item.ar[0].name} - item.al.name</Text>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   )
 }
 
@@ -179,5 +186,4 @@ const Loading = (props) => {
   )
 }
 
-export default TopListDetail
-
+export default PlaylistDetail

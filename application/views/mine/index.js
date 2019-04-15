@@ -7,17 +7,11 @@
  */
 import React, { Component } from 'react'
 import {
-  Platform,
   StyleSheet,
-  Keyboard,
   Text,
   View,
   TouchableOpacity,
-  TextInput,
   Dimensions,
-  LayoutAnimation,
-  NativeModules,
-  ListView,
   SectionList
 } from 'react-native'
 import NavItem from '../../components/naviItem'
@@ -27,7 +21,7 @@ import SvgIcon from 'react-native-svg-iconfont'
 import * as iconPath from '../../source/svg'
 import { inject, observer } from 'mobx-react'
 import ImagePlaceholder from '../../components/imagePlaceholder'
-const { width, height } = Dimensions.get('window')
+const { width } = Dimensions.get('window')
 
 @inject('account', 'app')
 @observer
@@ -35,6 +29,7 @@ class MineScreen extends Component {
   MineModel = new MineModel()
   constructor (props) {
     super(props)
+    this.goPage = this.goPage.bind(this)
     this.mineHeaderList = [
       {
         icon: <SvgIcon path={iconPath.music} size={26} fill={['#333']} />,
@@ -59,6 +54,11 @@ class MineScreen extends Component {
     ]
   }
 
+  goPage (detail) {
+    const { navigation } = this.props
+    navigation.navigate('PlaylistDetail', { detail })
+  }
+
   render () {
     const { account } = this.props
     const { userProfile = {} } = account
@@ -70,7 +70,7 @@ class MineScreen extends Component {
           ListHeaderComponent={<ListHeader list={this.mineHeaderList} />}
           renderItem={({ item, index, section }) => {
             const isSelf = item.userId === userId
-            return <ListItem isSelf={isSelf} item={item} />
+            return <ListItem isSelf={isSelf} item={item} goPage={this.goPage} />
           }}
           renderSectionHeader={({ section }) => {
             const { title, index } = section
@@ -109,9 +109,10 @@ const ListHeader = (props) => {
 }
 
 const ListItem = (props) => {
-  const { isSelf = false, item } = props
+  const { isSelf = false, item, goPage } = props
   return (
-    <TouchableOpacity activeOpacity={0.7} style={{ paddingLeft: 14, paddingRight: 8, flexDirection: 'row', marginBottom: 10 }}>
+    <TouchableOpacity activeOpacity={0.7} style={{ paddingLeft: 14, paddingRight: 8, flexDirection: 'row', marginBottom: 10 }}
+      onPress={() => goPage(item)}>
       <ImagePlaceholder source={{ uri: item.coverImgUrl }} style={{ width: width / 7, height: width / 7, borderRadius: 3 }} />
       <View style={{ flex: 1, paddingLeft: 12, justifyContent: 'center' }}>
         <Text numberOfLines={1} style={{ fontSize: 15, color: '#333' }}>{isSelf ? '我喜欢的音乐' : item.name}</Text>

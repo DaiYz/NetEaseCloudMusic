@@ -1,11 +1,5 @@
 import React, { Component } from 'react'
 import { observable, action, computed } from 'mobx'
-import utils from '../../../utils'
-import * as iconPath from '../../../source/svg'
-import IconFont from 'react-native-svg-iconfont'
-import { NavigationActions } from 'react-navigation'
-import moment from 'moment/moment'
-
 class MineModel {
   @observable createList = [{
     'subscribers': [],
