@@ -42,6 +42,7 @@ class HomeScreen extends Component {
     const { app, account } = this.props
     await hydrate('authToken', account)
     await hydrate('appTheme', app)
+    await hydrate('playMode', app)
     app.init(account.authToken, app.appTheme)
   }
 

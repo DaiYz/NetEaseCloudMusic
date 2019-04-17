@@ -15,7 +15,8 @@ class app {
     id: '121212121',
     playing: false
   }
-  @observable playMode = 0
+  @persist @observable playMode = 0
+  @observable audioPause = false
   @observable currentTheme = '蓝色主题'
 
   @action.bound changeTheme (type: String) {
@@ -64,6 +65,11 @@ class app {
       this.playMode = 0
     }
     this.playMode += 1
+  }
+
+  @action.bound isAudioPlay (status) {
+    console.log(status)
+    this.audioPause = status
   }
 }
 

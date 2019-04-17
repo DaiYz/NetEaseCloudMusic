@@ -43,7 +43,7 @@ class NavHeader extends React.Component {
           >
             {headerLeftIcon}
           </TouchableOpacity>
-          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }} >
+          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', marginHorizontal: 14 }} >
             {
               renderHeaderTitle ? renderHeaderTitle()
                 : <Text style={[{ color: '#fff', fontSize: 16, fontWeight: '500' }, titleStyle]} numberOfLines={1}>{headerTitle}</Text>

@@ -74,5 +74,6 @@ export default {
   comment: sessionMethodBuild(`${BaseUrl}/comment`), // comment 评论
   simi: sessionMethodBuild(`${BaseUrl}/simi`), // 相似
   playlist: sessionMethodBuild(`${BaseUrl}/playlist`), // 歌单
+  song: sessionMethodBuild(`${BaseUrl}/song`), // 歌单
   personalized: sessionMethodBuild(`${BaseUrl}/personalized`) // 个性化推荐
 }

@@ -3,7 +3,9 @@ import {
   View,
   Text,
   FlatList,
-  TouchableOpacity } from 'react-native'
+  StatusBar,
+  TouchableOpacity, Platform
+} from 'react-native'
 import WaveLoading from '../../components/wave'
 import VideoPlayerContainer from '../../components/videoPlayer'
 import { MvDetailModel } from './model'
@@ -61,6 +63,12 @@ class VideoDetail extends React.Component {
     if (this.MvDetailModel.payQualityLoadMore || this.onEndReachedCalledDuringMomentum) return null
     await this.MvDetailModel.getCommentList(20, true)
     this.onEndReachedCalledDuringMomentum = true
+  }
+
+  componentWillUnmount (): void {
+    if (Platform.OS === 'ios') {
+      StatusBar.setHidden(false, 'fade')
+    }
   }
 
   render () {
