@@ -8,16 +8,16 @@
 <img alt="NetEaseCloudMusic" src="https://raw.githubusercontent.com/DaiYz/NetEaseCloudMusic/master/screenshot/topList.png" width="250" height="444" />
 <img alt="NetEaseCloudMusic" src="https://raw.githubusercontent.com/DaiYz/NetEaseCloudMusic/master/screenshot/toplistBottom.png" width="250" height="444" />
 <img alt="NetEaseCloudMusic" src="https://raw.githubusercontent.com/DaiYz/NetEaseCloudMusic/master/screenshot/topListDetail.png" width="250" height="444" />
-<img alt="NetEaseCloudMusic" src="https://raw.githubusercontent.com/DaiYz/NetEaseCloudMusic/master/screenshots/Dj.png" width="250" height="444" />
-<img alt="NetEaseCloudMusic" src="https://raw.githubusercontent.com/DaiYz/NetEaseCloudMusic/master/screenshots/djType.png" width="250" height="444" />
-<img alt="NetEaseCloudMusic" src="https://raw.githubusercontent.com/DaiYz/NetEaseCloudMusic/master/screenshots/payQuality.png" width="250" height="444" />
-<img alt="NetEaseCloudMusic" src="https://raw.githubusercontent.com/DaiYz/NetEaseCloudMusic/master/screenshots/mv.png" width="250" height="444" />
-<img alt="NetEaseCloudMusic" src="https://raw.githubusercontent.com/DaiYz/NetEaseCloudMusic/master/screenshots/mvTop.png" width="250" height="444" />
-<img alt="NetEaseCloudMusic" src="https://raw.githubusercontent.com/DaiYz/NetEaseCloudMusic/master/screenshots/mvPlay.png" width="250" height="444" />
-<img alt="NetEaseCloudMusic" src="https://raw.githubusercontent.com/DaiYz/NetEaseCloudMusic/master/screenshots/mvFullScreen.png" width="250" height="444" />
-<img alt="NetEaseCloudMusic" src="https://raw.githubusercontent.com/DaiYz/NetEaseCloudMusic/master/screenshots/mine.png" width="250" height="444" />
-<img alt="NetEaseCloudMusic" src="https://raw.githubusercontent.com/DaiYz/NetEaseCloudMusic/master/screenshots/playlist.png" width="250" height="444" />
-<img alt="NetEaseCloudMusic" src="https://raw.githubusercontent.com/DaiYz/NetEaseCloudMusic/master/screenshots/audioPlay.png" width="250" height="444" />
+<img alt="NetEaseCloudMusic" src="https://raw.githubusercontent.com/DaiYz/NetEaseCloudMusic/master/screenshot/Dj.png" width="250" height="444" />
+<img alt="NetEaseCloudMusic" src="https://raw.githubusercontent.com/DaiYz/NetEaseCloudMusic/master/screenshot/djType.png" width="250" height="444" />
+<img alt="NetEaseCloudMusic" src="https://raw.githubusercontent.com/DaiYz/NetEaseCloudMusic/master/screenshot/payQuality.png" width="250" height="444" />
+<img alt="NetEaseCloudMusic" src="https://raw.githubusercontent.com/DaiYz/NetEaseCloudMusic/master/screenshot/mv.png" width="250" height="444" />
+<img alt="NetEaseCloudMusic" src="https://raw.githubusercontent.com/DaiYz/NetEaseCloudMusic/master/screenshot/mvTop.png" width="250" height="444" />
+<img alt="NetEaseCloudMusic" src="https://raw.githubusercontent.com/DaiYz/NetEaseCloudMusic/master/screenshot/mvPlay.png" width="250" height="444" />
+<img alt="NetEaseCloudMusic" src="https://raw.githubusercontent.com/DaiYz/NetEaseCloudMusic/master/screenshot/mvFullScreen.png" width="250" height="444" />
+<img alt="NetEaseCloudMusic" src="https://raw.githubusercontent.com/DaiYz/NetEaseCloudMusic/master/screenshot/mine.png" width="250" height="444" />
+<img alt="NetEaseCloudMusic" src="https://raw.githubusercontent.com/DaiYz/NetEaseCloudMusic/master/screenshot/playlist.png" width="250" height="444" />
+<img alt="NetEaseCloudMusic" src="https://raw.githubusercontent.com/DaiYz/NetEaseCloudMusic/master/screenshot/audioPlay.png" width="250" height="444" />
 <img alt="NetEaseCloudMusic" src="https://raw.githubusercontent.com/DaiYz/NetEaseCloudMusic/master/screenshot/friends.png" width="250" height="444" />
 <img alt="NetEaseCloudMusic" src="https://raw.githubusercontent.com/DaiYz/NetEaseCloudMusic/master/screenshot/account.png" width="250" height="444" /></p>
 
