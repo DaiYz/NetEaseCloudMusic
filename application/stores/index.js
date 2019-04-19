@@ -1,5 +1,5 @@
 import Account from './store.account'
-import App from './stroe.app'
+import App from './store.app'
 
 const StoreMaps = {
   account: new Account(),
