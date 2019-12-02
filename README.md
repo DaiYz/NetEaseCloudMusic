@@ -27,7 +27,7 @@ git clone https://github.com/DaiYz/NetEaseCloudMusic
 
 yarn or npm install
 
-react-natvie run-android
+react-native run-android
 
 cd ios
 
