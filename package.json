@@ -4,6 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
+    "bundle:android": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+    "bundle:ios": "react-native bundle --entry-file='index.js' --bundle-output='./ios/dacsee/main.jsbundle' --dev=false --platform='ios' --assets-dest='./ios'",
+    "build:android": "cd android && npm run bundle:android && ./gradlew assembleRelease && mv ./app/build/outputs/apk/release/app-release.apk ~/Lib/Android/music/release.apk",
     "test": "jest"
   },
   "dependencies": {

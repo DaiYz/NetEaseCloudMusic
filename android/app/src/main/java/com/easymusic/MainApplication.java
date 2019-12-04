@@ -8,7 +8,7 @@ import com.dylanvann.fastimage.FastImageViewPackage;
 import com.zmxv.RNSound.RNSoundPackage;
 import com.rnfs.RNFSPackage;
 import com.rnim.rn.audio.ReactNativeAudioPackage;
-import com.airbnb.android.react.lottie.LottiePackage;
+//import com.airbnb.android.react.lottie.LottiePackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.horcrux.svg.SvgPackage;
 import org.devio.rn.splashscreen.SplashScreenReactPackage;
@@ -39,7 +39,7 @@ public class MainApplication extends Application implements ReactApplication {
             new RNSoundPackage(),
             new RNFSPackage(),
             new ReactNativeAudioPackage(),
-            new LottiePackage(),
+//            new LottiePackage(),
             new VectorIconsPackage(),
             new SvgPackage(),
             new SplashScreenReactPackage(),

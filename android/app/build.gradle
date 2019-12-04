@@ -93,6 +93,7 @@ def enableSeparateBuildPerCPUArchitecture = false
  */
 def enableProguardInReleaseBuilds = false
 
+
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
@@ -106,8 +107,11 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
-        renderscriptTargetApi 23
-        renderscriptSupportModeEnabled true
+       // renderscriptTargetApi 23
+       // renderscriptSupportModeEnabled true
+        ndk {
+           abiFilters "armeabi-v7a", "x86"
+       }
     }
     splits {
         abi {
@@ -117,10 +121,21 @@ android {
             include "armeabi-v7a", "x86", "arm64-v8a"
         }
     }
+
+    signingConfigs {
+         release {
+             storeFile file(MYAPP_RELEASE_STORE_FILE)
+             storePassword MYAPP_RELEASE_STORE_PASSWORD
+             keyAlias MYAPP_RELEASE_KEY_ALIAS
+             keyPassword MYAPP_RELEASE_KEY_PASSWORD
+         }
+    }
+
     buildTypes {
         release {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            signingConfig signingConfigs.release
         }
     }
     // applicationVariants are e.g. debug, release
@@ -145,7 +160,7 @@ dependencies {
     implementation project(':react-native-sound')
     implementation project(':react-native-fs')
     implementation project(':react-native-audio')
-    implementation project(':lottie-react-native')
+//    implementation project(':lottie-react-native')
     implementation project(':react-native-vector-icons')
     implementation project(':react-native-svg')
     implementation project(':react-native-splash-screen')
