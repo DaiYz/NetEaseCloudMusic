@@ -2,14 +2,8 @@ import { observable, computed, action, autorun } from 'mobx'
 import { persist } from 'mobx-persist'
 import { zh_cn, en_us } from '../localize/strings'
 import { yellow, blue } from '../localize/theme'
-<<<<<<< HEAD
-import { NavigationActions } from 'react-navigation'
-import utils from '../utils'
-import Splash from 'react-native-splash-screen'
-=======
 import utils from '../utils'
 // import Splash from 'react-native-splash-screen'
->>>>>>> develop
 const PLAYMODE = [0, 1, 2]
 class app {
   @persist @observable appTheme = 'light'
@@ -36,17 +30,10 @@ class app {
         break
     }
     this.appTheme = type
-<<<<<<< HEAD
-    utils.global.navigator.dispatch(NavigationActions.setParams({
-      params: { theme: this.theme },
-      key: 'Account'
-    }))
-=======
     // utils.global.navigator.dispatch(NavigationActions.setParams({
     //   params: { theme: this.theme },
     //   key: 'Account'
     // }))
->>>>>>> develop
   }
 
   @action.bound async init (token, theme) {
@@ -56,15 +43,9 @@ class app {
     }
     this.changeTheme(theme)
     await this.getBanner()
-<<<<<<< HEAD
-    utils.global.navigator.dispatch(NavigationActions.navigate({
-      routeName: targetRout
-    }))
-=======
     // utils.global.navigator.dispatch(NavigationActions.navigate({
     //   routeName: targetRout
     // }))
->>>>>>> develop
   }
 
   @action.bound async getBanner () {

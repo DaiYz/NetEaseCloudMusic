@@ -12,11 +12,7 @@ class MineSection extends React.Component {
 
   rotate = () => {
     const { isShowItem, index } = this.props
-<<<<<<< HEAD
-    Animated.timing(this.animatedValue, { duration: 200, toValue: !this.hide ? 0 : 1 }, { useNativeDriver: true }).start(
-=======
     Animated.timing(this.animatedValue, { duration: 200, toValue: !this.hide ? 0 : 1, useNativeDriver: true }).start(
->>>>>>> develop
       () => isShowItem(index, !this.hide)
     )
     this.hide = !this.hide

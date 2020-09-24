@@ -1,8 +1,4 @@
 import Stores from '../stores'
-<<<<<<< HEAD
-// import {  } from 'react-navigation'
-=======
->>>>>>> develop
 
 type KeyMap = 'navigator' | 'toast'
 

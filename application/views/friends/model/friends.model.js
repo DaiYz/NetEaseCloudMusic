@@ -3,10 +3,6 @@ import { observable, action, computed } from 'mobx'
 import utils from '../../../utils'
 import * as iconPath from '../../../source/svg'
 import IconFont from 'react-native-svg-iconfont'
-<<<<<<< HEAD
-import { NavigationActions } from 'react-navigation'
-=======
->>>>>>> develop
 import moment from 'moment'
 
 class FriendsModel {

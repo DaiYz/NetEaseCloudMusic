@@ -6,10 +6,7 @@ import { inject, observer } from 'mobx-react'
 import Badge from '../../components/Badge'
 import NavItem from '../../components/naviItem'
 import ImagePlaceholder from '../../components/imagePlaceholder'
-<<<<<<< HEAD
-=======
 import NavHeader from '../../components/navHeader'
->>>>>>> develop
 const { width } = Dimensions.get('window')
 const ACTIONS = ['动 态', '关 注', '粉 丝', '编辑资料']
 @inject('account', 'app')
@@ -107,14 +104,11 @@ class AccountScreen extends React.Component {
     const { topButtons, centerButtons, bottomButtons, items } = this.state
     return (
       <View style={{ flex: 1, backgroundColor: '#f9f9f9' }}>
-<<<<<<< HEAD
-=======
         <NavHeader
           headerRightIcon={<SvgIcon path={iconPath.voice} size={24} fill={['#fff']} />}
           headerTitle='账号'
           headerContainerStyle={{ backgroundColor: '#ce3d3a' }}
         />
->>>>>>> develop
         <ScrollView>
           <Header profile={userProfile} />
           <View style={{ flexDirection: 'row', backgroundColor: '#fff', paddingVertical: 20 }}>

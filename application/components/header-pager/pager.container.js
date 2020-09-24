@@ -1,17 +1,9 @@
 import React, { Component, createElement, cloneElement } from 'react'
-<<<<<<< HEAD
-import { View, Platform, Text, ScrollView, ViewPagerAndroid, TouchableOpacity, Animated, Dimensions } from 'react-native'
-import AndroidViewPagerContainer from './pager.android'
-import LinearGradient from 'react-native-linear-gradient'
-const { width } = Dimensions.get('window')
-
-=======
 import { View, Platform, Text, ScrollView, TouchableOpacity, Animated, Dimensions } from 'react-native'
 import AndroidViewPagerContainer from './pager.android'
 import LinearGradient from 'react-native-linear-gradient'
 const { width } = Dimensions.get('window')
 const ViewPagerAndroid = require('@react-native-community/viewpager')
->>>>>>> develop
 class PagerContainerComponent extends Component {
   static defaultProps = {
     scrollEnabled: true

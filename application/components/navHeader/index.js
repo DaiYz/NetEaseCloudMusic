@@ -12,11 +12,8 @@ const HeaderPaddingTop = isIPhoneX ? (IPhoneXPaddingTop + iosStatusBarHeight) : 
 class NavHeader extends React.Component {
   static propTypes = {
     titleStyle: ViewPropTypes.style,
-<<<<<<< HEAD
-=======
     headerStyle: ViewPropTypes.style,
     headerContainerStyle: ViewPropTypes.style,
->>>>>>> develop
     headerTitle: PropTypes.string,
     renderHeaderTitle: PropTypes.func,
     headerLeftIcon: PropTypes.element,
@@ -31,18 +28,6 @@ class NavHeader extends React.Component {
   }
 
   render () {
-<<<<<<< HEAD
-    const { headerLeftIcon, onHeaderLeftPress, headerRightIcon, onHeaderRightPress, renderHeaderTitle, headerTitle, titleStyle } = this.props
-    return (
-      <View style={{
-        paddingTop: HeaderPaddingTop
-      }}>
-        <View style={{
-          width,
-          height: Header,
-          flexDirection: 'row'
-        }}>
-=======
     const { headerLeftIcon, onHeaderLeftPress, headerRightIcon, onHeaderRightPress, renderHeaderTitle, headerTitle, titleStyle, headerStyle, headerContainerStyle } = this.props
     return (
       <View style={[{
@@ -55,7 +40,6 @@ class NavHeader extends React.Component {
           flexDirection: 'row'
         }, headerStyle]}
         >
->>>>>>> develop
           <TouchableOpacity
             activeOpacity={0.7}
             style={styles.headerLeft}
@@ -63,11 +47,7 @@ class NavHeader extends React.Component {
           >
             {headerLeftIcon}
           </TouchableOpacity>
-<<<<<<< HEAD
-          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', marginHorizontal: 14 }} >
-=======
           <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', marginHorizontal: 14 }}>
->>>>>>> develop
             {
               renderHeaderTitle ? renderHeaderTitle()
                 : <Text style={[{ color: '#fff', fontSize: 16, fontWeight: '500' }, titleStyle]} numberOfLines={1}>{headerTitle}</Text>

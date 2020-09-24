@@ -29,8 +29,6 @@ export default {
   PlaylistDetail,
   AudioScreen
 }
-<<<<<<< HEAD
-=======
 
 
 export const stacks = [
@@ -89,4 +87,3 @@ export const stacks = [
     options: { headerShown: false }
   }
 ]
->>>>>>> develop

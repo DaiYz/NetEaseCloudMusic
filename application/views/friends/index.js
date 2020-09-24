@@ -7,10 +7,7 @@ import ImagePlaceholder from '../../components/imagePlaceholder'
 import { observer } from 'mobx-react'
 import utils from '../../utils'
 import * as iconPath from '../../source/svg'
-<<<<<<< HEAD
-=======
 import NavHeader from '../../components/navHeader'
->>>>>>> develop
 const { width } = Dimensions.get('window')
 const defaultContainerWidth = (width - 14 - 14)
 const defaultImageWidth = defaultContainerWidth / 2
@@ -60,9 +57,6 @@ class FriendsScreen extends React.Component {
 
   render () {
     return (
-<<<<<<< HEAD
-      <View style={{ flex: 1 }}>
-=======
       <>
         <NavHeader
           headerLeftIcon={<SvgIcon path={iconPath.addFriend} size={24} fill={['#fff']} />}
@@ -70,18 +64,13 @@ class FriendsScreen extends React.Component {
           headerTitle='动态'
           headerContainerStyle={{ backgroundColor: '#ce3d3a' }}
         />
->>>>>>> develop
         <FlatList
           keyExtractor={(item, index) => `${index}`}
           data={this.FriendsModel.list.slice()}
           ItemSeparatorComponent={() => <View style={{ width, height: 0.6, backgroundColor: '#dfdfdf' }} />}
           renderItem={({ item, index }) => <ListItem data={item} getWidthAndHeight={this.getWidthAndHeight} />}
         />
-<<<<<<< HEAD
-      </View>
-=======
       </>
->>>>>>> develop
     )
   }
 }
