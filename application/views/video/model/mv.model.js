@@ -2,7 +2,10 @@ import React, { Component } from 'react'
 import { observable, action, computed } from 'mobx'
 import utils from '../../../utils'
 import moment from 'moment'
+<<<<<<< HEAD
 import { NavigationActions } from 'react-navigation'
+=======
+>>>>>>> develop
 
 class MvModel {
   @observable loading = false

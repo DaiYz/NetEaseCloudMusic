@@ -1,13 +1,21 @@
 import React from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
+<<<<<<< HEAD
 import Splash from 'react-native-splash-screen'
+=======
+// import Splash from 'react-native-splash-screen'
+>>>>>>> develop
 import { observer, inject } from 'mobx-react'
 
 @inject('account')
 @observer
 class LoginScreen extends React.Component {
   componentDidMount () {
+<<<<<<< HEAD
     setTimeout(() => Splash.hide(), 100)
+=======
+    // setTimeout(() => Splash.hide(), 100)
+>>>>>>> develop
   }
   render () {
     return (

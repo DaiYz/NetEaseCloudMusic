@@ -1,3 +1,7 @@
 <resources>
+<<<<<<< HEAD
     <string name="app_name">easyMusic</string>
+=======
+    <string name="app_name">网易云音乐</string>
+>>>>>>> develop
 </resources>

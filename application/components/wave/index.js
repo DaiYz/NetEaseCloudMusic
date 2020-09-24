@@ -9,13 +9,21 @@ class WaveLoading extends React.Component {
   }
 
   up (duration) {
+<<<<<<< HEAD
     Animated.timing(this.value, { duration: duration, toValue: 1 }).start(
+=======
+    Animated.timing(this.value, { duration: duration, toValue: 1, useNativeDriver: false }).start(
+>>>>>>> develop
       () => this.down()
     )
   }
 
   down (duration) {
+<<<<<<< HEAD
     Animated.timing(this.value, { duration: duration, toValue: 0 }).start(
+=======
+    Animated.timing(this.value, { duration: duration, toValue: 0, useNativeDriver: false }).start(
+>>>>>>> develop
       () => this.up()
     )
   }
@@ -31,11 +39,22 @@ class WaveLoading extends React.Component {
       <View style={[styles.container, { width: this.props.size, height: this.props.size }]}>
         {
           baseHeight.map((item, index) =>
+<<<<<<< HEAD
             <Animated.View key={index} style={[styles.line, { backgroundColor: lineColor }, lineStyle, {
               height: this.value.interpolate({
                 inputRange: [0, 1],
                 outputRange: [item, targetHeight[index]]
               }) }]} />
+=======
+            <Animated.View
+              key={index} style={[styles.line, { backgroundColor: lineColor }, lineStyle, {
+                height: this.value.interpolate({
+                  inputRange: [0, 1],
+                  outputRange: [item, targetHeight[index]]
+                })
+              }]}
+            />
+>>>>>>> develop
           )
         }
       </View>

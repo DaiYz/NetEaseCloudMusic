@@ -98,6 +98,10 @@ class ParallaxStickListView extends React.Component {
         type: LayoutAnimation.Types.linear,
         property: 'opacity'
       },
+<<<<<<< HEAD
+=======
+      useNativeDriver: false,
+>>>>>>> develop
       update: {
         type: 'linear'
       } }, () => {})

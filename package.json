@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "easyMusic",
   "version": "0.0.1",
   "private": true,
@@ -12,10 +13,32 @@
   "dependencies": {
     "axios": "^0.18.0",
     "lottie-react-native": "^2.5.11",
+=======
+  "name": "Music",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@react-native-community/async-storage": "^1.12.0",
+    "@react-native-community/masked-view": "^0.1.10",
+    "@react-native-community/viewpager": "^4.1.6",
+    "@react-navigation/bottom-tabs": "^5.9.0",
+    "@react-navigation/native": "^5.7.4",
+    "@react-navigation/stack": "^5.9.1",
+    "axios": "^0.20.0",
+    "create-react-class": "^15.6.3",
+>>>>>>> develop
     "mobx": "^4.6.0",
     "mobx-persist": "^0.4.1",
     "mobx-react": "^5.4.2",
     "moment": "^2.24.0",
+<<<<<<< HEAD
     "react": "16.6.3",
     "react-native": "0.58.4",
     "react-native-actionsheet": "^2.4.2",
@@ -49,6 +72,42 @@
     "metro-react-native-babel-preset": "0.51.1",
     "react-test-renderer": "16.6.3",
     "standard": "^12.0.1"
+=======
+    "react": "16.13.1",
+    "react-native": "0.63.2",
+    "react-native-actionsheet": "^2.4.2",
+    "react-native-audio": "^4.3.0",
+    "react-native-fast-image": "^8.3.2",
+    "react-native-gesture-handler": "^1.8.0",
+    "react-native-linear-gradient": "^2.5.6",
+    "react-native-orientation": "^3.1.3",
+    "react-native-reanimated": "^1.13.0",
+    "react-native-safe-area-context": "^3.1.8",
+    "react-native-screens": "^2.11.0",
+    "react-native-slider": "^0.11.0",
+    "react-native-snap-carousel": "^3.9.1",
+    "react-native-sound": "^0.11.0",
+    "react-native-svg": "^12.1.0",
+    "react-native-svg-iconfont": "^1.0.4",
+    "react-native-vector-icons": "^7.1.0",
+    "react-native-video": "^5.1.0-alpha8",
+    "react-timer-mixin": "^0.13.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/plugin-proposal-decorators": "^7.10.5",
+    "@babel/preset-flow": "^7.10.4",
+    "@babel/runtime": "^7.8.4",
+    "@react-native-community/eslint-config": "^1.1.0",
+    "babel-jest": "^25.1.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.5",
+    "eslint": "^6.5.1",
+    "eslint-plugin-flowtype": "^5.2.0",
+    "jest": "^25.1.0",
+    "metro-react-native-babel-preset": "^0.59.0",
+    "react-test-renderer": "16.13.1",
+    "standard": "^14.3.4"
+>>>>>>> develop
   },
   "jest": {
     "preset": "react-native"

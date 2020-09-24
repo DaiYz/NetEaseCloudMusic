@@ -3,7 +3,11 @@ import { observable, action, computed } from 'mobx'
 import utils from '../../../utils'
 import * as iconPath from '../../../source/svg'
 import IconFont from 'react-native-svg-iconfont'
+<<<<<<< HEAD
 import { NavigationActions } from 'react-navigation'
+=======
+// import { NavigationActions } from 'react-navigation'
+>>>>>>> develop
 import moment from 'moment/moment'
 const RANKID = [
   {
@@ -153,7 +157,11 @@ class TopListModel {
       this.loading = true
       const idx = this.getRankId(id)
       if (idx.length === 0) {
+<<<<<<< HEAD
         return utils.global.navigator.dispatch(NavigationActions.back())
+=======
+        // return utils.global.navigator.dispatch(NavigationActions.back())
+>>>>>>> develop
       } else {
         const data = await utils.Seesions.top.Get(`/list?idx=${idx}&timestamp=${moment.now()}`)
         if (data.code === 200) {

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 rootProject.name = 'easyMusic'
 include ':react-native-orientation'
 project(':react-native-orientation').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-orientation/android')
@@ -24,4 +25,8 @@ project(':react-native-linear-gradient').projectDir = new File(rootProject.proje
 include ':react-native-gesture-handler'
 project(':react-native-gesture-handler').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-gesture-handler/android')
 
+=======
+rootProject.name = 'Music'
+apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
+>>>>>>> develop
 include ':app'

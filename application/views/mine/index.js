@@ -15,6 +15,10 @@ import {
   SectionList
 } from 'react-native'
 import NavItem from '../../components/naviItem'
+<<<<<<< HEAD
+=======
+import NavHeader from '../../components/navHeader'
+>>>>>>> develop
 import MineSection from './MineSection'
 import { MineModel } from './model'
 import SvgIcon from 'react-native-svg-iconfont'
@@ -64,7 +68,17 @@ class MineScreen extends Component {
     const { userProfile = {} } = account
     const { userId = '' } = userProfile
     return (
+<<<<<<< HEAD
       <View style={styles.container} >
+=======
+      <View style={styles.container}>
+        <NavHeader
+          headerLeftIcon={<SvgIcon path={iconPath.cloud} size={24} fill={['#fff']} />}
+          headerRightIcon={<SvgIcon path={iconPath.voice} size={24} fill={['#fff']} />}
+          headerTitle='我的音乐'
+          headerContainerStyle={{ backgroundColor: '#ce3d3a' }}
+        />
+>>>>>>> develop
         <SectionList
           keyExtractor={(item, index) => `${index}`}
           ListHeaderComponent={<ListHeader list={this.mineHeaderList} />}
@@ -75,8 +89,12 @@ class MineScreen extends Component {
           renderSectionHeader={({ section }) => {
             const { title, index } = section
             return <MineSection title={title} listNum={index === 0 ? this.MineModel.createList.length : this.MineModel.favList.length} isShowItem={this.MineModel.isShowItem} index={index} show={index === 0 ? this.MineModel.showCreate : this.MineModel.showFav} />
+<<<<<<< HEAD
           }
           }
+=======
+          }}
+>>>>>>> develop
           stickySectionHeadersEnabled
           sections={this.MineModel.MineList}
         />
@@ -111,8 +129,15 @@ const ListHeader = (props) => {
 const ListItem = (props) => {
   const { isSelf = false, item, goPage } = props
   return (
+<<<<<<< HEAD
     <TouchableOpacity activeOpacity={0.7} style={{ paddingLeft: 14, paddingRight: 8, flexDirection: 'row', marginBottom: 10 }}
       onPress={() => goPage(item)}>
+=======
+    <TouchableOpacity
+      activeOpacity={0.7} style={{ paddingLeft: 14, paddingRight: 8, flexDirection: 'row', marginBottom: 10 }}
+      onPress={() => goPage(item)}
+    >
+>>>>>>> develop
       <ImagePlaceholder source={{ uri: item.coverImgUrl }} style={{ width: width / 7, height: width / 7, borderRadius: 3 }} />
       <View style={{ flex: 1, paddingLeft: 12, justifyContent: 'center' }}>
         <Text numberOfLines={1} style={{ fontSize: 15, color: '#333' }}>{isSelf ? '我喜欢的音乐' : item.name}</Text>

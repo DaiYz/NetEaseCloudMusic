@@ -19,6 +19,10 @@ class MvTopList extends Component {
       headerTitle: 'MV排行榜'
     }
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> develop
   async componentDidMount () {
     await this.TopModel.getTopList(false, 50)
   }
@@ -34,7 +38,11 @@ class MvTopList extends Component {
         ? <SafeAreaView style={{ flex: 1, backgroundColor: '#f2f4f5' }}>
           <FlatList
             ListHeaderComponent={<View style={{ marginVertical: 10 }}>
+<<<<<<< HEAD
               <Text style={{ marginHorizontal: 10, color: '#666', fontSize: 13 }}>最近更新:{moment().diff(moment(this.TopModel.updateTime), 'days') !== 0 ? moment(this.TopModel.updateTime).format('MoDo') : '今天' }</Text>
+=======
+              <Text style={{ marginHorizontal: 10, color: '#666', fontSize: 13 }}>最近更新:{moment().diff(moment(this.TopModel.updateTime), 'days') !== 0 ? moment(this.TopModel.updateTime).format('MoDo') : '今天'}</Text>
+>>>>>>> develop
             </View>}
             keyExtractor={(item, index) => `${index}`}
             data={this.TopModel.topList.slice()}
@@ -62,7 +70,12 @@ const ListItem = (props) => {
         <LinearGradient
           start={{ x: 0.5, y: 0 }}
           end={{ x: 0.5, y: 1 }}
+<<<<<<< HEAD
           colors={['rgba(0,0,0,0.2)', 'rgba(0,0,0,0)']} style={{ flexDirection: 'row', alignItems: 'center', position: 'absolute', top: 0, right: 0, width: '100%', justifyContent: 'flex-end', borderRadius: 3, paddingTop: 4, paddingRight: 6 }}>
+=======
+          colors={['rgba(0,0,0,0.2)', 'rgba(0,0,0,0)']} style={{ flexDirection: 'row', alignItems: 'center', position: 'absolute', top: 0, right: 0, width: '100%', justifyContent: 'flex-end', borderRadius: 3, paddingTop: 4, paddingRight: 6 }}
+        >
+>>>>>>> develop
           <SvgIcon path={iconPath.mvPlayOut} size={11} fill={['#fff']} />
           <Text style={{ color: '#fff', fontSize: 12, marginLeft: 4 }}>{utils.Tools.processNum(item.playCount)}</Text>
         </LinearGradient>
@@ -82,8 +95,15 @@ const Loading = (props) => {
   const { style } = props
   return (
     <View style={[{ alignItems: 'center' }, style]}>
+<<<<<<< HEAD
       <WaveLoading baseHeight={[4, 16, 2, 10]} targetHeight={[10, 4, 16, 2]} lineColor={'#ce3d3a'}
         lineStyle={{ marginRight: 2, width: 1 }} />
+=======
+      <WaveLoading
+        baseHeight={[4, 16, 2, 10]} targetHeight={[10, 4, 16, 2]} lineColor='#ce3d3a'
+        lineStyle={{ marginRight: 2, width: 1 }}
+      />
+>>>>>>> develop
       <Text style={{ fontSize: 13, color: '#888', marginTop: 8 }}>正在加载...</Text>
     </View>
   )

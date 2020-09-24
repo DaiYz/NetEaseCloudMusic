@@ -1,5 +1,8 @@
 import { Dimensions, Platform, PixelRatio, StatusBar } from 'react-native'
+<<<<<<< HEAD
 import { Header } from 'react-navigation'
+=======
+>>>>>>> develop
 import moment from 'moment'
 const { width, height } = Dimensions.get('window')
 const IPhoneXPaddingTop = 24
@@ -57,7 +60,11 @@ const isIPhoneX = () => {
 const NavHeight = (isCustom: true) => {
   const IPhoneX = isIPhoneX()
   const IosNavHeader = IPhoneX ? (IPhoneXPaddingTop + iosStatusBarHeight + customHeader) : (iosStatusBarHeight + customHeader)
+<<<<<<< HEAD
   const AndroidNavHeader = androidStatusBarHeight + (isCustom ? customHeader : Header.HEIGHT)
+=======
+  const AndroidNavHeader = androidStatusBarHeight + (isCustom ? customHeader : 44)
+>>>>>>> develop
   return (Platform.OS === 'ios' ? IosNavHeader : AndroidNavHeader)
 }
 

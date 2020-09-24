@@ -1,4 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "easyMusic",
   "displayName": "easyMusic"
+=======
+  "name": "Music",
+  "displayName": "Music"
+>>>>>>> develop
 }

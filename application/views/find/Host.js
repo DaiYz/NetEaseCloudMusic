@@ -5,8 +5,12 @@ import ImagePlaceholder from '../../components/imagePlaceholder'
 import SimpleLine from 'react-native-vector-icons/SimpleLineIcons'
 import HomeList from '../../components/homeList'
 import { DjModel } from './model'
+<<<<<<< HEAD
 import { NavigationActions } from 'react-navigation'
 import utils from '../../utils'
+=======
+import { navigate } from '../../utils/rootNavigation'
+>>>>>>> develop
 const { width } = Dimensions.get('window')
 const ImagePadding = 8
 const listPaddingHorizontal = 16
@@ -21,11 +25,15 @@ class Host extends Component {
   }
 
   onButtonPress = () => {
+<<<<<<< HEAD
     utils.global.navigator.dispatch(NavigationActions.navigate(
       {
         routeName: 'PayQuality'
       }
     ))
+=======
+    navigate('PayQuality')
+>>>>>>> develop
   }
 
   render () {
@@ -79,8 +87,13 @@ const Footer = (props) => {
   const { data } = props
   const { hotDj = [] } = data
   const { moreDjList = [] } = data
+<<<<<<< HEAD
   let hotDjChildren = []
   let moreDjChildren = []
+=======
+  const hotDjChildren = []
+  const moreDjChildren = []
+>>>>>>> develop
   for (let i = 0; hotDj.length > 0 && i < hotDj.length / 2; i++) {
     hotDjChildren.push(
       <FootItem data={hotDj} index={i} key={i} />
@@ -125,25 +138,50 @@ const Normal = (props) => {
             <TouchableOpacity activeOpacity={1}>
               <Text style={styles.title}>{item.title}</Text>
             </TouchableOpacity>
+<<<<<<< HEAD
             <SimpleLine name={'arrow-right'} size={14} color={'#333'} />
+=======
+            <SimpleLine name='arrow-right' size={14} color='#333' />
+>>>>>>> develop
           </View> : null
       }
       <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
         {
           item.data.length > 0
             ? item.data.map((val, i) =>
+<<<<<<< HEAD
               <View key={i}
                 style={[{ marginHorizontal: (i % 3 === 1) ? ImagePadding / 2 : 0 }, styles.coverContainer]}>
+=======
+              <View
+                key={i}
+                style={[{ marginHorizontal: (i % 3 === 1) ? ImagePadding / 2 : 0 }, styles.coverContainer]}
+              >
+>>>>>>> develop
                 <View>
                   <ImagePlaceholder
                     source={{ uri: val.picUrl }}
                     borderRadius={3}
+<<<<<<< HEAD
                     style={styles.cover} />
                   <Text numberOfLines={1} style={[styles.name, { position: 'absolute',
                     bottom: 6,
                     left: 2,
                     color: '#fff'
                   }]}>{val.name}</Text>
+=======
+                    style={styles.cover}
+                  />
+                  <Text
+                    numberOfLines={1} style={[styles.name, {
+                      position: 'absolute',
+                      bottom: 6,
+                      left: 2,
+                      color: '#fff'
+                    }]}
+                  >{val.name}
+                  </Text>
+>>>>>>> develop
                 </View>
                 <Text numberOfLines={2} style={[styles.name, { marginTop: 6 }]}>{type === 'recommended' ? val.rcmdtext : val.desc}</Text>
               </View>
@@ -174,6 +212,7 @@ const HighQuality = (props) => {
           {
             item.data.length > 0
               ? item.data.map((val, i) =>
+<<<<<<< HEAD
                 <View key={i}
                   style={[{ marginHorizontal: (i % 3 === 1) ? ImagePadding / 2 : 0 }, styles.coverContainer]}>
                   <View>
@@ -185,6 +224,26 @@ const HighQuality = (props) => {
                       left: 4,
                       color: '#fff'
                     }]}>{val.name}</Text>
+=======
+                <View
+                  key={i}
+                  style={[{ marginHorizontal: (i % 3 === 1) ? ImagePadding / 2 : 0 }, styles.coverContainer]}
+                >
+                  <View>
+                    <ImagePlaceholder
+                      source={{ uri: val.picUrl }}
+                      style={[styles.cover, { borderTopRightRadius: 3, borderTopLeftRadius: 3 }]}
+                    />
+                    <Text
+                      numberOfLines={1} style={[styles.name, {
+                        position: 'absolute',
+                        bottom: 4,
+                        left: 4,
+                        color: '#fff'
+                      }]}
+                    >{val.name}
+                    </Text>
+>>>>>>> develop
                   </View>
                   <View style={{ backgroundColor: '#fff', borderBottomLeftRadius: 3, borderBottomRightRadius: 3 }}>
                     <Text numberOfLines={2} style={[styles.name, { marginTop: 6 }]}>{val.rcmdText}</Text>
@@ -198,7 +257,11 @@ const HighQuality = (props) => {
         <View style={{ alignItems: 'center', marginVertical: 20 }}>
           <TouchableOpacity activeOpacity={0.7} style={styles.userCenterButton} onPress={() => onButtonPress()}>
             <Text style={{ fontSize: 12, color: '#fff' }}>全部精品电台</Text>
+<<<<<<< HEAD
             <SimpleLine name={'arrow-right'} size={12} color={'#ddd'} />
+=======
+            <SimpleLine name='arrow-right' size={12} color='#ddd' />
+>>>>>>> develop
           </TouchableOpacity>
         </View>
       </ImageBackground>
